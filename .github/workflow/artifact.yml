@@ -1,18 +1,18 @@
-name : Artifact
+name: Artifact
 
-on : [push]
+on: [push]
 
-env :
+env:
   ARTIFACT_NAME=Abhishek_artifact
 
 jobs:
   main:
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - name : check_artifact
-        uses : action/checkout@v1
-      - name : upload_Artifact
-        uses : action/upload-artifact@v1
+      - name: check_artifact
+        uses: action/checkout@v1
+      - name: upload_Artifact
+        uses: action/upload-artifact@v1
         with:
-          name : ${{env.ARTIFACT_NAME}}
-          path : .
+          name: ${{env.ARTIFACT_NAME}}
+          path: .
