@@ -1,16 +1,18 @@
-name: Artifact
+name: Run_and_create_Artifact
 
 on: [push]
 
 env:
-  ARTIFACT_NAME: Abhishek_artifact
+  ARTIFACT_NAME: python_artifact
 
 jobs:
-  main:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: check_artifact
+      - name: check and test artifact
         uses: actions/checkout@v2
+      - run: python hello_world.py
+      
       - name: upload_Artifact
         uses: actions/upload-artifact@v2
         with:
